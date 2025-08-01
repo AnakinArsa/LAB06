@@ -1,15 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+public static void main(String[] args) {
+        Shark shark = new Shark();
+        SurgeonFish surgeonFish = new SurgeonFish();
+        Flyingshark flyingShark = new Flyingshark();
+        Insect insect = new Insect();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-    }
+        // Demonstrate dynamic polymorphism
+        shark.eat(surgeonFish);            // Calls eat(Fish) with SurgeonFish
+        shark.eat(new Shark());            // Calls eat(Fish) with Shark
+
+        // Demonstrate static polymorphism (overloading)
+        flyingShark.eat(new Shark());      // Calls eat(Fish)
+        flyingShark.eat(insect);           // Calls eat(Flyable)
+
+        // Demonstrate polymorphic assignments and behaviors
+        Fish fish = new Shark();           // A Shark is-a Fish
+        Flyable flyer = new Flyingshark(); // A FlyingShark is-a Flyable
+        fish.swim();                       // Calls Shark's swim()
+        flyer.fly();                       // Calls FlyingShark's fly()
+    }                    // Calls FlyingShark's fly()
 }

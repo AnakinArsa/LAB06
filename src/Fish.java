@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
-public class Fish {
+public abstract class Fish {
+    public abstract void swim();
 }

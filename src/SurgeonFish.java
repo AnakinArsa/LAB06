@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class SurgeonFish extends Fish {
+    @Override
+    public void swim(){
+        System.out.println("SurgeonFish is swimming gracefully!");
+    }
 
-public class SurgeonFish {
+    @Override
+    public String stringTO(){
+        return "SurgeonFish@" + Integer.toHexString(hashCode());
+    }
 }
