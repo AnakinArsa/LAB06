@@ -5,7 +5,7 @@ public class SurgeonFish extends Fish {
     }
 
     @Override
-    public String stringTO(){
+    public String toString(){
         return "SurgeonFish@" + Integer.toHexString(hashCode());
     }
 }
